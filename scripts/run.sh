@@ -15,6 +15,7 @@ flags=(
     "-std=c99"
     -Werror
     -Weverything
+    -Wno-c2x-extensions
     -Wno-cast-align
     -Wno-declaration-after-statement
     -Wno-disabled-macro-expansion

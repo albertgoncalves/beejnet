@@ -19,8 +19,7 @@ typedef struct sigaction        SigAction;
 typedef struct sockaddr_storage SockAddrStorage;
 typedef socklen_t               SockLen;
 
-static void sigchild_handler(i32 _) {
-    (void)_;
+static void sigchild_handler(i32) {
     const i32 saved_errno = errno;
     while (0 < waitpid(-1, NULL, WNOHANG)) {
     }
@@ -106,7 +105,7 @@ i32 main(void) {
                 // ...
             }
             close(new_fd);
-            return OK;
+            _exit(OK);
         }
         close(new_fd);
     }
