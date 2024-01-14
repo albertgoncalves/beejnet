@@ -48,7 +48,8 @@ i32 main(void) {
         }
 
         for (AddrInfo* current = server_info; current;
-             current = current->ai_next) {
+             current = current->ai_next)
+        {
             socket_fd = socket(current->ai_family,
                                current->ai_socktype,
                                current->ai_protocol);
